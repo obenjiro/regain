@@ -1,7 +1,7 @@
 regain
 ======
 
-Regain control over your source code
+Regain control over your source code. This cli tool allow you to generate project birdview, documentation, statistics, control technical dept. All of that with a few simple queries using Regain DSL.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/regain.svg)](https://npmjs.org/package/regain)
@@ -16,7 +16,7 @@ Regain control over your source code
 <!-- usage -->
 ```sh-session
 $ npm install -g regain
-$ regain COMMAND
+$ regain init
 running command...
 $ regain (-v|--version|version)
 regain/0.0.0 darwin-x64 node-v11.3.0
@@ -28,28 +28,24 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`regain hello [FILE]`](#regain-hello-file)
+* [`regain init [FILE]`](#regain-init-file)
 * [`regain help [COMMAND]`](#regain-help-command)
 
-## `regain hello [FILE]`
+## `regain init [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ regain hello [FILE]
+  $ regain init [FILE]
 
 OPTIONS
   -f, --force
   -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ regain hello
-  hello world from ./src/hello.ts!
+  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue")
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/aiboy/regain/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.0/src/commands/init.ts)_
 
 ## `regain help [COMMAND]`
 
@@ -67,4 +63,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
 <!-- commandsstop -->
