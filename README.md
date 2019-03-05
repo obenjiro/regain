@@ -28,24 +28,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`regain init [FILE]`](#regain-init-file)
 * [`regain help [COMMAND]`](#regain-help-command)
-
-## `regain init [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ regain init [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue")
-```
-
-_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.0/src/commands/init.ts)_
+* [`regain init [FILE]`](#regain-init-file)
 
 ## `regain help [COMMAND]`
 
@@ -64,4 +48,19 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
+## `regain init [FILE]`
+
+generates initial files for documentation
+
+```
+USAGE
+  $ regain init [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue")
+```
+
+_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.0/src/commands/init.ts)_
 <!-- commandsstop -->

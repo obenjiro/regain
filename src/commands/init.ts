@@ -19,7 +19,7 @@ export default class Init extends Command {
   static args = [{ name: 'file' }];
 
   async run() {
-    const { args, flags } = this.parse(Init);
+    const { flags } = this.parse(Init);
     const validTypes = ['discovery', 'angular', 'react', 'vue'];
     let type;
 
@@ -82,7 +82,7 @@ export default class Init extends Command {
     // Catching an error
     this.log('Installing dependencies...');
     try {
-      //await execa.shell('npm install');
+      await execa.shell('npm install');
       this.log(`${chalk.green('Done [✔︎]')}`);
     } catch (error) {
       this.error(`${chalk.red(error)}`);
