@@ -19,7 +19,7 @@ $ npm install -g regain
 $ regain init
 running command...
 $ regain (-v|--version|version)
-regain/0.0.0 darwin-x64 node-v11.3.0
+regain/0.0.1 darwin-x64 node-v11.3.0
 $ regain --help [COMMAND]
 USAGE
   $ regain COMMAND
@@ -62,5 +62,5 @@ OPTIONS
   -t, --type=type  type of template (one of "discovery", "angular", "react", "vue")
 ```
 
-_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.1/src/commands/init.ts)_
 <!-- commandsstop -->
