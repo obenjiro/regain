@@ -20,7 +20,7 @@ export default class Init extends Command {
 
   async run() {
     const { flags } = this.parse(Init);
-    const validTypes = ['discovery', 'angular', 'react', 'vue'];
+    const validTypes = ['discovery', 'angular', 'react', 'vue', 'eslint-plugin'];
     let type;
 
     if (flags.type) {
@@ -62,6 +62,9 @@ export default class Init extends Command {
         throw Error('Not implemented template type: ' + type);
       } else if (type === 'vue') {
         throw Error('Not implemented template type: ' + type);
+      } else if (type === 'eslint-plugin') {
+        json.scripts.regain = 'discovery';
+        json.devDependencies['@discoveryjs/discovery'] = '^1.0.0-beta.11';
       } else {
         throw Error('Unknow template type: ' + type);
       }
@@ -84,6 +87,11 @@ export default class Init extends Command {
     try {
       await execa.shell('npm install');
       this.log(`${chalk.green('Done [✔︎]')}`);
+      if (type === 'eslint-plugin') {
+        this.log('Preparing dev enviroment...');
+        await execa.shell('npm run make-dev');
+        this.log(`${chalk.green('Done [✔︎]')}`);
+      }
     } catch (error) {
       this.error(`${chalk.red(error)}`);
     }

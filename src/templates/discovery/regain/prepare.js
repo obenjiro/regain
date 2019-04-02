@@ -27,9 +27,14 @@ discovery.setPrepare(data => {
                 '$.program.body.[type="ExportNamedDeclaration"]',
                 current
             ),
+        variables: current =>
+            discovery.query(
+                '$.program.body.[type="ExportNamedDeclaration"].declaration.declarations',
+                current
+            ),
         classes: current =>
             discovery.query(
-                '$.program.body.declaration.[type="ClassDeclaration"]',
+                '$.program.body.declaration.[type="ClassDeclaration"] or $.program.body.[type="ClassDeclaration"]',
                 current
             ),
         implements: current => discovery.query("$.implements", current),
