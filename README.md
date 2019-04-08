@@ -69,7 +69,7 @@ USAGE
 OPTIONS
   -f, --force
   -h, --help       show CLI help
-  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue", "eslint-plugin")
+  -t, --type=type  type of template (one of discovery,angular,react,vue,eslint-plugin)
 ```
 
 _See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.3/src/commands/init.ts)_
