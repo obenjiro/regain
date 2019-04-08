@@ -1,7 +1,7 @@
 {
   "name": "regain",
   "description": "Regain control over your source code",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Aleksey Okhrimenko",
   "bin": {
     "regain": "./bin/run"

@@ -3,6 +3,16 @@ regain
 
 Regain control over your source code. This cli tool allow you to generate project birdview, documentation, statistics, control technical dept. All of that with a few simple queries using Regain DSL.
 
+Regain CLI:
+
+- Regain Crawler (parses source code and folder structure and saves it to JSON)
+- Regain DSL (query language for JSON)
+- Regain Templates (templates for documentation and eslint plugins)
+
+This tools is bases on awesome projects:
+- Discovery (https://github.com/discoveryjs/discovery)
+- Jora (https://github.com/lahmatiy/jora)
+
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/regain.svg)](https://npmjs.org/package/regain)
 [![Downloads/week](https://img.shields.io/npm/dw/regain.svg)](https://npmjs.org/package/regain)
@@ -16,10 +26,10 @@ Regain control over your source code. This cli tool allow you to generate projec
 <!-- usage -->
 ```sh-session
 $ npm install -g regain
-$ regain init
+$ regain COMMAND
 running command...
 $ regain (-v|--version|version)
-regain/0.0.1 darwin-x64 node-v11.3.0
+regain/0.0.3 darwin-x64 node-v11.3.0
 $ regain --help [COMMAND]
 USAGE
   $ regain COMMAND
@@ -59,8 +69,8 @@ USAGE
 OPTIONS
   -f, --force
   -h, --help       show CLI help
-  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue")
+  -t, --type=type  type of template (one of "discovery", "angular", "react", "vue", "eslint-plugin")
 ```
 
-_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.3/src/commands/init.ts)_
 <!-- commandsstop -->

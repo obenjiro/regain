@@ -5,13 +5,15 @@ import * as fs from 'fs-extra';
 import * as inquirer from 'inquirer';
 import * as path from 'path';
 
+const VALID_TYPES = ['discovery', 'angular', 'react', 'vue', 'eslint-plugin'];
+
 export default class Init extends Command {
   static description = 'generates initial files for documentation';
 
   static flags = {
     help: flags.help({ char: 'h' }),
     // flag with a value (-t, --type=VALUE)
-    type: flags.string({ char: 't', description: 'type of template (one of "discovery", "angular", "react", "vue")' }),
+    type: flags.string({ char: 't', description: 'type of template (one of ' + VALID_TYPES + ')' }),
     // flag with no value (-f, --force)
     force: flags.boolean({ char: 'f' })
   };
@@ -20,7 +22,6 @@ export default class Init extends Command {
 
   async run() {
     const { flags } = this.parse(Init);
-    const validTypes = ['discovery', 'angular', 'react', 'vue', 'eslint-plugin'];
     let type;
 
     if (flags.type) {
@@ -30,14 +31,14 @@ export default class Init extends Command {
         {
           name: 'type',
           type: 'list',
-          choices: validTypes
+          choices: VALID_TYPES
         }
       ]);
       type = answer.type;
     }
 
-    if (validTypes.indexOf(type) === -1) {
-      throw Error('Unknow template type: ' + type + '. Choose one of: ' + validTypes);
+    if (VALID_TYPES.indexOf(type) === -1) {
+      throw Error('Unknow template type: ' + type + '. Choose one of: ' + VALID_TYPES);
     }
 
     this.log('Copying template...');
@@ -55,7 +56,10 @@ export default class Init extends Command {
 
       if (type === 'discovery') {
         json.scripts.regain = 'discovery';
-        json.devDependencies['@discoveryjs/discovery'] = '^1.0.0-beta.11';
+        json.scripts['regain-build'] = 'discovery-build';
+        json.scripts['regain-deploy'] = 'npm run regain-build && gh-pages -d build/default';
+        json.devDependencies['@discoveryjs/discovery'] = '^1.0.0-beta.12';
+        json.devDependencies['gh-pages'] = '^2.0.1';
       } else if (type === 'angular') {
         throw Error('Not implemented template type: ' + type);
       } else if (type === 'react') {
@@ -64,7 +68,7 @@ export default class Init extends Command {
         throw Error('Not implemented template type: ' + type);
       } else if (type === 'eslint-plugin') {
         json.scripts.regain = 'discovery';
-        json.devDependencies['@discoveryjs/discovery'] = '^1.0.0-beta.11';
+        json.devDependencies['@discoveryjs/discovery'] = '^1.0.0-beta.12';
       } else {
         throw Error('Unknow template type: ' + type);
       }
