@@ -1,4 +1,4 @@
-regain
+Regain
 ======
 
 Regain control over your source code. This cli tool allow you to generate project birdview, documentation, statistics, control technical dept. All of that with a few simple queries using Regain DSL.
@@ -74,3 +74,7 @@ OPTIONS
 
 _See code: [src/commands/init.ts](https://github.com/aiboy/regain/blob/v0.0.3/src/commands/init.ts)_
 <!-- commandsstop -->
+
+# Want to help?
+
+Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for contributing and then check out one of our issues
