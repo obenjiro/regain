@@ -21,6 +21,7 @@ This tools is bases on awesome projects:
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
+* [Want to help?](#want-to-help)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
